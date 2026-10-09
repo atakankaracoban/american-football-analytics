@@ -66,6 +66,11 @@ Hücum hattının A-Gap'ten kenar çizgisine (End) kadar olan 7 koridordaki koş
 
 ![Run Gap Analysis](output/run_gap_analysis.png)
 
+### 3. Down ve Mesafeye Göre Başarı Oranı
+Koşu ve pas oyunlarının down ve mesafe kategorilerine göre başarı oranlarını karşılaştırır.
+
+![Success Rate Matrix](output/success_rate_matrix.png)
+
 ---
 
 ## Kurulum ve Çalıştırma
