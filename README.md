@@ -40,7 +40,10 @@ football-analytics/
 ├── .gitignore
 ├── README.md
 ├── requirements.txt
-├── data/                  # Ham maç dökümleri ve test veri setleri
+├── data/                  # Örnek Hudl dışa aktarımı ve temizlenmiş oyun verileri
+│   ├── sample_hudl_export.csv
+│   ├── cleaned_hudl_pbp.csv
+│   └── cleaned_hudl_pbp.parquet
 ├── output/                # Otomatik üretilen grafikler ve veri çıktıları
 │   ├── passing_chart.png
 │   ├── run_gap_analysis.png
@@ -56,7 +59,8 @@ football-analytics/
     ├── scouting_engine.py # Veri temizleme ve temel eğilim çıkarımı
     ├── visuals.py         # Isı haritaları ve saha koridoru görselleştirmeleri
     ├── feature_prep.py    # Snap öncesi değişken mühendisliği (Feature Engineering)
-    └── train_model.py     # XGBoost sınıflandırma ve SHAP analiz betiği
+    ├── train_model.py     # XGBoost sınıflandırma ve SHAP analiz betiği
+    └── hudl_pipeline.py   # Hudl CSV temizleme ve standartlaştırma
 ```
 
 ---
@@ -93,6 +97,9 @@ Kansas City Chiefs (KC) için üretilen maç günü savunma eğilim kartı PNG v
 ### Snap Öncesi Model Veri Seti
 `python src/feature_prep.py` komutu, 2023 NFL play-by-play verisinden özellikleri (`pre_snap_features.csv`), pas/koşu hedefini (`pre_snap_target.csv`) ve oyun kimlik bilgilerini (`pre_snap_metadata.csv`) `output/` klasörüne kaydeder.
 
+### Hudl CSV Veri Hattı
+`python src/hudl_pipeline.py` komutu, örnek Hudl dışa aktarımı yoksa sentetik test verisi oluşturur; ardından veriyi standartlaştırıp temizlenmiş CSV ve Parquet dosyalarını `data/` klasörüne kaydeder. Repodaki `sample_hudl_export.csv` sentetik test verisidir; gerçek takım verisi değildir.
+
 ---
 
 ## Kurulum ve Çalıştırma
@@ -126,6 +133,9 @@ python src/train_model.py
 
 # 7. Kenar yönetimi eğilim kartını PNG ve PDF olarak üretin
 python src/generate_sideline_card.py
+
+# 8. Hudl CSV dosyasını standartlaştırın
+python src/hudl_pipeline.py
 ```
 
 ---
