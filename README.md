@@ -47,7 +47,9 @@ football-analytics/
 │   ├── success_rate_matrix.png
 │   ├── pre_snap_features.csv
 │   ├── pre_snap_target.csv
-│   └── pre_snap_metadata.csv
+│   ├── pre_snap_metadata.csv
+│   ├── shap_summary.png
+│   └── shap_waterfall_example.png
 └── src/                   # Modüler analitik boru hattı
     ├── scouting_engine.py # Veri temizleme ve temel eğilim çıkarımı
     ├── visuals.py         # Isı haritaları ve saha koridoru görselleştirmeleri
@@ -73,6 +75,13 @@ Hücum hattının A-Gap'ten kenar çizgisine (End) kadar olan 7 koridordaki koş
 Koşu ve pas oyunlarının down ve mesafe kategorilerine göre başarı oranlarını karşılaştırır.
 
 ![Success Rate Matrix](output/success_rate_matrix.png)
+
+### 4. Model Açıklanabilirliği (SHAP)
+Eğitilen modelin genel özellik önemlerini ve örnek bir oyuna ait yerel karar analizini gösterir.
+
+![SHAP Summary](output/shap_summary.png)
+
+![SHAP Waterfall](output/shap_waterfall_example.png)
 
 ### Snap Öncesi Model Veri Seti
 `python src/feature_prep.py` komutu, 2023 NFL play-by-play verisinden özellikleri (`pre_snap_features.csv`), pas/koşu hedefini (`pre_snap_target.csv`) ve oyun kimlik bilgilerini (`pre_snap_metadata.csv`) `output/` klasörüne kaydeder.
@@ -104,6 +113,9 @@ python src/visuals.py
 
 # 5. Snap öncesi özellik, hedef ve metadata CSV dosyalarını üretin
 python src/feature_prep.py
+
+# 6. Run/pass modelini eğitin ve SHAP grafikleri üretin
+python src/train_model.py
 ```
 
 ---
