@@ -41,10 +41,13 @@ football-analytics/
 ├── README.md
 ├── requirements.txt
 ├── data/                  # Ham maç dökümleri ve test veri setleri
-├── output/                # Otomatik üretilen koç grafikleri ve raporlar
+├── output/                # Otomatik üretilen grafikler ve veri çıktıları
 │   ├── passing_chart.png
 │   ├── run_gap_analysis.png
-│   └── success_rate_matrix.png
+│   ├── success_rate_matrix.png
+│   ├── pre_snap_features.csv
+│   ├── pre_snap_target.csv
+│   └── pre_snap_metadata.csv
 └── src/                   # Modüler analitik boru hattı
     ├── scouting_engine.py # Veri temizleme ve temel eğilim çıkarımı
     ├── visuals.py         # Isı haritaları ve saha koridoru görselleştirmeleri
@@ -71,6 +74,9 @@ Koşu ve pas oyunlarının down ve mesafe kategorilerine göre başarı oranlar�
 
 ![Success Rate Matrix](output/success_rate_matrix.png)
 
+### Snap Öncesi Model Veri Seti
+`python src/feature_prep.py` komutu, 2023 NFL play-by-play verisinden özellikleri (`pre_snap_features.csv`), pas/koşu hedefini (`pre_snap_target.csv`) ve oyun kimlik bilgilerini (`pre_snap_metadata.csv`) `output/` klasörüne kaydeder.
+
 ---
 
 ## Kurulum ve Çalıştırma
@@ -95,6 +101,9 @@ pip install -r requirements.txt
 
 # 4. Eğilim ve görselleştirme motorunu çalıştırın
 python src/visuals.py
+
+# 5. Snap öncesi özellik, hedef ve metadata CSV dosyalarını üretin
+python src/feature_prep.py
 ```
 
 ---
