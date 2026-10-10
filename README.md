@@ -49,7 +49,9 @@ football-analytics/
 │   ├── pre_snap_target.csv
 │   ├── pre_snap_metadata.csv
 │   ├── shap_summary.png
-│   └── shap_waterfall_example.png
+│   ├── shap_waterfall_example.png
+│   ├── sideline_tendency_card.png
+│   └── sideline_tendency_card.pdf
 └── src/                   # Modüler analitik boru hattı
     ├── scouting_engine.py # Veri temizleme ve temel eğilim çıkarımı
     ├── visuals.py         # Isı haritaları ve saha koridoru görselleştirmeleri
@@ -82,6 +84,11 @@ Eğitilen modelin genel özellik önemlerini ve örnek bir oyuna ait yerel karar
 ![SHAP Summary](output/shap_summary.png)
 
 ![SHAP Waterfall](output/shap_waterfall_example.png)
+
+### 5. Kenar Yönetimi Eğilim Kartı
+Kansas City Chiefs (KC) için üretilen maç günü savunma eğilim kartı PNG ve baskıya hazır PDF biçiminde sunulur.
+
+![Sideline Tendency Card](output/sideline_tendency_card.png)
 
 ### Snap Öncesi Model Veri Seti
 `python src/feature_prep.py` komutu, 2023 NFL play-by-play verisinden özellikleri (`pre_snap_features.csv`), pas/koşu hedefini (`pre_snap_target.csv`) ve oyun kimlik bilgilerini (`pre_snap_metadata.csv`) `output/` klasörüne kaydeder.
@@ -116,6 +123,9 @@ python src/feature_prep.py
 
 # 6. Run/pass modelini eğitin ve SHAP grafikleri üretin
 python src/train_model.py
+
+# 7. Kenar yönetimi eğilim kartını PNG ve PDF olarak üretin
+python src/generate_sideline_card.py
 ```
 
 ---
