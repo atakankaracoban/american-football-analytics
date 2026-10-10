@@ -158,5 +158,5 @@ python src/hudl_pipeline.py
 **Atakan Karaçoban**  
 * **Rol:** Sports Analytics & Data Science Researcher  
 * **Hedef:** Üniversite Amerikan Futbolu Takımı Analitik ve Rakip Analizi Departmanı  
-* **LinkedIn:** [linkedin.com/in/kullanici-adiniz](https://linkedin.com)  
-* **E-posta:** [eposta-adresiniz@universite.edu.tr](mailto:eposta-adresiniz@universite.edu.tr)
+* **LinkedIn:** https://www.linkedin.com/in/atakan-kara%C3%A7oban-2487b2329/
+* **E-posta:** atakankaracoban133@gmail.com
