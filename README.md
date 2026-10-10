@@ -102,43 +102,7 @@ Kansas City Chiefs (KC) için üretilen maç günü savunma eğilim kartı PNG v
 
 ---
 
-## Kurulum ve Çalıştırma
 
-### Gereksinimler
-* Python 3.10 veya üzeri
-* `pip` paket yöneticisi
-
-### Adım Adım Kurulum
-
-```bash
-# 1. Repoyu klonlayın
-git clone [https://github.com/](https://github.com/)[KULLANICI_ADINIZ]/[REPO_ADINIZ].git
-cd [REPO_ADINIZ]
-
-# 2. Sanal ortamı oluşturun ve aktif edin
-python -m venv .venv
-source .venv/bin/activate  # Windows için: .venv\Scripts\activate
-
-# 3. Bağımlılıkları yükleyin
-pip install -r requirements.txt
-
-# 4. Eğilim ve görselleştirme motorunu çalıştırın
-python src/visuals.py
-
-# 5. Snap öncesi özellik, hedef ve metadata CSV dosyalarını üretin
-python src/feature_prep.py
-
-# 6. Run/pass modelini eğitin ve SHAP grafikleri üretin
-python src/train_model.py
-
-# 7. Kenar yönetimi eğilim kartını PNG ve PDF olarak üretin
-python src/generate_sideline_card.py
-
-# 8. Hudl CSV dosyasını standartlaştırın
-python src/hudl_pipeline.py
-```
-
----
 
 ## Makine Öğrenmesi Modeli Özeti
 
